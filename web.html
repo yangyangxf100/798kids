@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html xmlns:gs="http://www.gensee.com/ec"> 
+<head> 
+     <meta charset="utf-8"/> 
+     <title>H5 直播测试页面</title> 
+     <script type="text/javascript" src="http://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script> 
+     <link href="http://static.gensee.com/webcast/static/sdk/css/bootstrap.css" type="text/css" rel="stylesheet"> 
+     <style type="text/css"> 
+         .videoDiv { 
+             height: 400px; 
+         }  
+     </style> 
+     <script type="text/javascript"> 
+        /* //1. 根据组获得通讯通道 
+         var channel = GS.createChannel(); 
+
+         //2. 通过通道监听点名事件 
+         channel.bind("onRollcall", function (event) { 
+             alert(event.data.timeout); 
+         }); 
+
+         //2. 通过通道监听问答事件 
+         channel.bind("onQA", function (event) { 
+             alert(event.data.question); 
+         }); 
+
+         //3.通过通道提问，提问，私聊，公聊的提交可以设置回调函数，同时resultInfo的格式为
+		//{result:true|false,data:data},data即为提交的数据 
+			 channel.send("submitRollcall", { 
+				 "id"  : 23534677685687 
+			 },function(resultInfo){ 
+			}); 
+        
+		// 4.通过通道提交点名信息 
+		channel.send("submitQuestion", { 
+	             "content"  : "what's your name?" 
+         }); 
+
+		// 收到公聊消息  
+		 channel.bind("onPublicChat", function (event) { 
+             alert('公聊 '+event.data.content); 
+         }); 
+
+		 //收到私聊消息 
+		 channel.bind("onPriChat", function (event) { 
+             alert('私聊 '+event.data.content); 
+         });
+
+
+		function aa(){
+			 // 提交公聊信息 
+			channel.send("submitChat", { 
+						"content":"你好啊", 
+						"richtext":"", 
+						"security":"default" 
+					 },function(resultInfo){ 
+						alert(resultInfo);
+					}
+			); 
+		}*/
+ 
+     </script> 
+</head> 
+<body> 
+	<h2 align="center">H5 直播测试页面</h2><br> 
+ 
+	<div class="container"> 
+		 <div class="row-fluid"> 
+			 <div class="span6 videoDiv">
+				 <gs:video-live site="fl-creative.gensee.com" ownerid="vMOfaUrzEc"  authcode="444444" ctx="training"  uid="55831" uname="yangyang1" k="test"/> 
+
+			
+			</div> 
+		 </div> 
+	</div> 
+
+	<!--
+		<input type="button" value="发送信息" onclick="aa()">
+	-->
+
+</body> 
+</html> 
